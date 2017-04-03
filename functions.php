@@ -32,3 +32,11 @@
 		wp_enqueue_script( 'slicknavjs' );
 	}
 	add_action( 'wp_enqueue_scripts', 'ka_register_scripts' );
+	
+	
+// Navigation
+	function kat_register_menu() {
+		register_nav_menu( 'mainnav', __( 'Hauptnavigation - Header', 'katharina' ) );
+		register_nav_menu( 'footernav', __( 'Navigation im Footer', 'katharina' ) );
+	}
+	add_action( 'after_setup_theme', 'kat_register_menu' );

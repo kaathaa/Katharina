@@ -6,10 +6,13 @@
 				</div>
 				<div class="three columns">
 					<nav>
-						<ul id="footerMenu">
-							<li>Github</li>
-							<li>Impressum</li>
-						</ul>
+						<?php 
+						$args= array(
+							'theme_location' => 'footernav',
+							'container' => 'nav',
+						);
+						wp_nav_menu($args);
+						?>
 					</nav>
 				</div>
 			</div>

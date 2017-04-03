@@ -1,8 +1,10 @@
 					<nav>
-						<ul id="menu">
-							<li><a href="#">About</a></li>
-							<li><a href="#">Motivation</a></li>
-							<li><a href="#">Skills</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</nav> 
+						<?php 
+						$args= array(
+							'theme_location' => 'mainnav',
+							'container' => 'nav',
+							'menu_id'      => 'menu',
+						);
+						wp_nav_menu($args);
+						?>
+					</nav>
