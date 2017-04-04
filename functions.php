@@ -11,6 +11,7 @@
 	add_theme_support( 'html5', $args );
 	
 	
+	
 // STYLES AND SCRIPTS
 	function ka_register_styles() {
 		wp_register_style( 'normalizer', get_template_directory_uri() .'/css/normalize.css' );
@@ -33,6 +34,21 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'ka_register_scripts' );
 	
+
+	
+// GOGGLE UND ICONS	
+	 function load_google_fonts() {
+		 wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Great+Vibes|Raleway" rel="stylesheet');
+		 wp_enqueue_style( 'googleFonts');
+	 }
+	 add_action('wp_print_styles', 'load_google_fonts');
+	 
+	wp_enqueue_style(
+		'font-awesome',
+		'//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
+	);
+
+
 	
 // NAVIGATION
 	function kat_register_menu() {
@@ -42,6 +58,5 @@
 	add_action( 'after_setup_theme', 'kat_register_menu' );
 	
 
-	
 
 
