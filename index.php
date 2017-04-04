@@ -2,7 +2,7 @@
 
 	
 	<!--ABOUT-->
-	<section class="about">
+	<section id="about">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
@@ -11,7 +11,7 @@
 			</div><!--- /.row -->			
 			<div class="row">
 				<div class="seven columns">
-					<p>Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p><p>Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.	Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc</p>
+					<p>INDEX PHP!!!!!!!Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p><p>Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.	Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc</p>
 				</div>
 				<div class="five columns">
 					<img class="u-max-full-width" src="http://placehold.it/350x200" alt="Katharina">
@@ -22,7 +22,7 @@
 	
 	
 	<!-- MOTIVATION -->
-	<section class="motivation">
+	<section id="motivation">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
@@ -39,7 +39,7 @@
 
 
 	<!-- SKILLS -->
-	<section class="skills">
+	<section id="skills">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
@@ -67,7 +67,7 @@
 
 
 	<!--CONTACT-->
-	<section class="contact">
+	<section id="contact">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">

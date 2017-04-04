@@ -1,14 +1,13 @@
- <!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="<?php bloginfo('language'); ?>">
 <head>
-
-	<meta charset="utf-8">
-	<title>Katharina</title>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<title><?php bloginfo('name'); ?></title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 	<?php wp_enqueue_script('jquery');?>
@@ -30,4 +29,5 @@
 				</div>
 			</div>
 		</div><!-- /.container -->
-	</header>
+	</header>
+	
