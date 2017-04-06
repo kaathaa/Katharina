@@ -14,7 +14,7 @@
 									
 			$child_pages = new WP_Query( $child_pages_query_args );
 			if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) 	: $child_pages->the_post();
-				get_template_part( 'content', 'child' ); 
+				get_template_part('template_parts/content-child');
 			endwhile;
 			endif;  
 		  wp_reset_postdata(); 

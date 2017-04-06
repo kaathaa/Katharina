@@ -14,8 +14,9 @@ body, html {
 section {
   padding: 150px 0;
 }
-h1 {
-  margin: 100px 0 20px;
+#logo {
+  display: block;
+  margin: 180px 0 20px;
   font-family: 'Great Vibes', cursive;
   font-size: 4em;
   font-weight: bold;
@@ -24,15 +25,25 @@ h3 {
   margin-bottom: 25px;
   text-align: left;
 }
+img {
+	max-width: 100%;
+	height: auto;
+}
 
 
 
 /* HEADER */
 header {
-  background: url("http://placehold.it/900x500") no-repeat fixed center / cover;
+  /*background: url("http://placehold.it/900x500") no-repeat fixed center / cover;*/
   text-align: center;
   height: 100%;
 }
+header a {
+	text-decoration: none;
+}
+
+
+
 
 
 
@@ -44,6 +55,12 @@ header {
 
 
 /* NAVIGATION */
+
+header nav {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
 .slicknav_menu {
 	display:none;
 }
@@ -55,16 +72,22 @@ header {
 	display: inline;
 }
 nav a{
-	text-decoration: none;
 	padding: 0 1em;
 	text-transform: uppercase;
 }
-
+.slideInDown{
+	background: rgb(128,128,128);
+}
+.slicknav_btn {
+	background: none;
+}
+.slicknav_menu .slicknav_menutxt {
+	display: none;
+}
 @media screen and (max-width: 40em) {
 	.js #menu {
 		display:none;
-	}
-	
+	}	
 	.js .slicknav_menu {
 		display:block;
 	}
@@ -102,5 +125,16 @@ footer {
 	background: gray;
 	height: 150px;	
 }
+#toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    display: none;
+	cursor: pointer;
+}
+.fa-arrow-circle-up {
+	color: rgb(30,174,219);
+}
+
 
 

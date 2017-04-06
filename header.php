@@ -11,20 +11,26 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 	<?php wp_enqueue_script('jquery');?>
 	<?php wp_head(); ?>
+	
+	<style>
+		header {
+			background:url(<?php header_image();?>) top center no-repeat;
+		}
+	</style>
 </head>
 <body <?php body_class();?>>
-	
-	<header>
+
+	<header id="home">
+	<?php get_template_part('template_parts/navi'); ?>
 		<div class="container">  
 			<div class="row">
 				<div class="twelve columns">
-					<?php get_template_part('template_parts/navi'); ?>
 				</div> 
 			</div>
 			<div class="row">
-				<div class="twelve columns">
-					<h1>KS</h1>
-					<h2>Hallo ich bin Katharina</h2>
+				<div class="twelve columns">	
+					<span id ="logo"><a href="<?php echo home_url('/') ?>">KS</a></span>			
+					<h1><?php bloginfo('description'); ?></h1>
 				</div>
 			</div>
 		</div><!-- /.container -->
