@@ -12,17 +12,34 @@
 	<?php wp_enqueue_script('jquery');?>
 	<?php wp_head(); ?>
 	
-	<style>
-		header {
-			background:url(<?php header_image();?>) top center no-repeat;
-		}
-	</style>
+	<?php if(is_front_page()) { ?>
+		<style>
+			header {
+				background:url(<?php header_image();?>) top center no-repeat;
+			}
+		</style>
+	<?php } else { ?>
+		<style>
+			.intro {
+				display: none;
+				height: 10px;
+			}
+			header {
+				height:auto;
+			}
+			footer {
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+			}
+		</style>
+	<?php } ?>
 </head>
 <body <?php body_class();?>>
 
 	<header id="home">
 	<?php get_template_part('template_parts/navi'); ?>
-		<div class="container">  
+		<div class="container intro">  
 			<div class="row">
 				<div class="twelve columns">
 				</div> 
