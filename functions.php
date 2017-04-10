@@ -67,6 +67,16 @@
 	
 // CUSTOM HEADER	
 	add_theme_support( 'custom-header', $args );
+	
+	
+	
 
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	

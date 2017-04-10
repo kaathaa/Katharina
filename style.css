@@ -29,12 +29,15 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-
+section{
+	background: no-repeat fixed center / cover;
+	max-width: 100%;
+	height: auto;
+}
 
 
 /* HEADER */
 header {
-  /*background: url("http://placehold.it/900x500") no-repeat fixed center / cover;*/
   text-align: center;
   height: 100%;
 }
@@ -47,11 +50,8 @@ header a {
 
 
 
-/* MOTIVATION */
-#motivation{
-	background: url("http://placehold.it/900x500") no-repeat fixed center / cover;
-	color: black;
-}
+
+
 
 
 /* NAVIGATION */
@@ -116,7 +116,7 @@ textarea {
 	min-height: 150px;
 }
 #contact {
-	background: url("images/phone-graustufen.jpg") no-repeat fixed center / cover;
+
 	color: black;
 }
 
