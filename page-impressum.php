@@ -18,6 +18,17 @@
 				background:url(<?php header_image();?>) top center no-repeat;
 			}
 		</style>
+	<?php } else { ?>
+		<style>
+			header {
+				height:auto;
+			}
+			footer {
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+			}
+		</style>
 	<?php } ?>
 
 
@@ -27,18 +38,34 @@
 <body <?php body_class();?>>
 
 	<header id="home">
-	<?php get_template_part('template_parts/navi'); ?>
+		<?php 
+		$args= array(
+			'theme_location' => 'static_nav',
+			'container' => 'nav',
+			'menu_id'      => 'menu',
+		);
+		wp_nav_menu($args);
+		?>
+	</header>
 		<div class="container">  
 			<div class="row">
 				<div class="twelve columns">
+				
+					<?php	
+						if( have_posts()) : while (have_posts() ) : the_post(); ?>
+							<div class="static-content">
+								<h3><?php the_title(); ?></h3>
+								<?php the_content(); ?>
+							</div>
+							<?php endwhile;
+						else :
+							__( 'Sorry, no posts matched your criteria.', 'katharina' );
+						endif;
+					?>				
+				
 				</div> 
-			</div>
-			<div class="row">
-				<div class="twelve columns">	
-					<span id ="logo"><a href="<?php echo home_url('/') ?>">KS</a></span>			
-					<h1><?php bloginfo('description'); ?></h1>
-				</div>
-			</div>
+			</div><!-- /.row-->
 		</div><!-- /.container -->
 	</header>
-	
+
+<?php get_footer(); ?>

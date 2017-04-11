@@ -90,6 +90,8 @@ nav a{
 	}	
 	.js .slicknav_menu {
 		display:block;
+		border: 2px solid red !important;
+		position: fixed;
 	}
 }
 
@@ -135,6 +137,7 @@ footer {
 .fa-arrow-circle-up {
 	color: rgb(30,174,219);
 }
+
 
 
 
