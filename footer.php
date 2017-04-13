@@ -27,25 +27,19 @@
 	
 	<script>
 		jQuery(function(){
-			jQuery('#menu').slicknav();
+			jQuery('#menu').slicknav({
+				label: '',
+				closeOnClick: 'true',
+			});
 		});
 	</script>
 	
 	<script>
 		jQuery(document).scroll(function(){
-			jQuery('#menu').addClass("animated slideInDown");
+			jQuery('#menu, .slicknav_menu').addClass("animated slideInDown");
 		});
 	</script>
 	
-	
-	
-	
-	
-	<script>
-		jQuery(document).scroll(function(){
-			jQuery('.slicknav_menu').addClass("animated slideInDown");
-		});
-	</script>
 	
 	
 	<script>

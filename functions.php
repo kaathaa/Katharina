@@ -15,9 +15,11 @@
 // STYLES AND SCRIPTS
 	function ka_register_styles() {
 		wp_register_style( 'normalizer', get_template_directory_uri() .'/css/normalize.css' );
-		wp_enqueue_style( 'normalizer' );		
+		wp_enqueue_style( 'normalizer' );
+		
 		wp_register_style( 'skeleton', get_template_directory_uri() .'/css/skeleton.css' );
 		wp_enqueue_style( 'skeleton' );
+		
 		wp_register_style( 'slicknav', get_template_directory_uri() .'/css/slicknav.css' );
 		wp_enqueue_style( 'slicknav' );
 		
@@ -28,6 +30,7 @@
 		wp_enqueue_style( 'style' );
 	}
 	add_action( 'wp_enqueue_scripts', 'ka_register_styles' );
+
 	function ka_register_scripts() {
 		wp_register_script( 'slicknavjs', get_template_directory_uri() .'/js/jquery.slicknav.min.js' ,null, true );
 		wp_enqueue_script( 'slicknavjs' );
@@ -42,6 +45,7 @@
 		wp_enqueue_style( 'googleFonts');
 	}
 	 add_action('wp_print_styles', 'load_google_fonts');
+	 
 	wp_enqueue_style(
 		'font-awesome',
 		'//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
@@ -65,24 +69,39 @@
 // CUSTOM HEADER	
 	add_theme_support( 'custom-header', $args );
 	
-// WIDGET	
-	function ka_widgets_init() {		
-		register_sidebar( array('name' => __( 'Footer Widget', 'katharina' ),			
-								'id' => 'footer-widget',			
-								'description' => __( 'Widget im Footerbereich', 'katharina' ),			
-								'before_widget' => '<div id="%1$s" class="widget %2$s">',			
-								'after_widget'  => '</div>',			
-								'before_title'  => '<h5 class="widgettitle">',			
-								'after_title'   => '</h5>',		
-								) );	
-	}	add_action( 'widgets_init', 'ka_widgets_init' );	
+	
+// WIDGET
+	function ka_widgets_init() {
+		register_sidebar( array(
+			'name' => __( 'Footer Widget', 'katharina' ),
+			'id' => 'footer-widget',
+			'description' => __( 'Widget im Footerbereich', 'katharina' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="widgettitle">',
+			'after_title'   => '</h5>',
+		) );
+	}
+	add_action( 'widgets_init', 'ka_widgets_init' );
+	
+	
+	
+//REMOVES TAGS
+	remove_filter( 'the_content', 'wpautop' );	
+
+// SHORTCODE
+	function ka_shortcode( $atts, $content = null ) {
+        extract( shortcode_atts(
+            array(
+                'cols' => 'six',
+            ), $atts )
+        );
+		
+		return '<div class="' .$cols. ' columns">' .$content. '</div>';
+	}
+	add_shortcode( 'columns', 'ka_shortcode' );
 	
 
-	
-	
-	
-	
-	
 	
 	
 	
