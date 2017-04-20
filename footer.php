@@ -1,12 +1,12 @@
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="nine columns">
+				<div class="eight columns">
 					<?php if ( is_active_sidebar( 'footer-widget' ) ) : ?>
 						<?php dynamic_sidebar( 'footer-widget' ); ?>
 					<?php endif; ?>	
 				</div>
-				<div class="three columns">
+				<div class="four columns">
 					<nav>
 						<?php 
 						$args= array(

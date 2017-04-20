@@ -12,24 +12,18 @@
 	<?php wp_enqueue_script('jquery');?>
 	<?php wp_head(); ?>
 	
-	<?php if(is_front_page()) { ?>
+
 		<style>
-			header {
-				background:url(<?php header_image();?>) top center no-repeat;
-			}
-		</style>
-	<?php } else { ?>
-		<style>
-			header {
-				height:auto;
+			body {
+				background: none !important;
 			}
 			footer {
 				position: absolute;
-				width: 100%;
 				bottom: 0;
+				width: 100%;
 			}
 		</style>
-	<?php } ?>
+
 
 
 	
@@ -66,6 +60,6 @@
 				</div> 
 			</div><!-- /.row-->
 		</div><!-- /.container -->
-	</header>
+	
 
 <?php get_footer(); ?>
