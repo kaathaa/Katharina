@@ -16,6 +16,7 @@
 		<style>
 			header {
 				background:url(<?php header_image();?>) top center no-repeat;
+				background-size: cover;
 			}
 		</style>
 	<?php } ?>

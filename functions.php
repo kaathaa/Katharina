@@ -89,17 +89,36 @@
 //REMOVES TAGS
 	remove_filter( 'the_content', 'wpautop' );	
 
+	
+	
 // SHORTCODE
 	function ka_shortcode( $atts, $content = null ) {
         extract( shortcode_atts(
             array(
                 'cols' => 'six',
             ), $atts )
-        );
-		
+        );		
 		return '<div class="' .$cols. ' columns">' .$content. '</div>';
 	}
 	add_shortcode( 'columns', 'ka_shortcode' );
+	
+	
+
+
+// THEMEDOKU - DASHBOARD
+    function ka_add_dashboard_widget() {
+        wp_add_dashboard_widget(
+                     'example_dashboard_widget',        
+                     'Dokumentation für dieses Theme',         
+                     'wpv_dashboard_widget_content' 
+            );	
+    }
+    add_action( 'wp_dashboard_setup', 'ka_add_dashboard_widget' );
+
+    function wpv_dashboard_widget_content() {
+        echo '<p>Shortcode fürs Gridlayout:</p>
+		<p>[columns cols="three"]...[/columns]</p>';
+    }
 	
 
 	

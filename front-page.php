@@ -1,5 +1,5 @@
 <?php get_header(); ?> 	
-	<div class="site-content">         
+	     
 		<?php 
 			global $post;
 			$child_pages_query_args = array(
@@ -19,6 +19,6 @@
 			endif;  
 		  wp_reset_postdata(); 
 		?>          
-	</div> 		
+	
 <?php
 get_footer();

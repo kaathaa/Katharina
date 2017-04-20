@@ -1,11 +1,15 @@
-	<section id="<?php the_title(); ?>" <?php if ( get_field('background-image') ) { echo 'style="background-image: url(' . get_field('background-image') . ')"'; } ?>>
+	<?php $backgroundImage = get_field('background-image'); ?>
+	
+	<section id="<?php the_title(); ?>" 
+		<?php if(!empty($backgroundImage)): ?>
+			style="background-image: url(<?php echo $backgroundImage['url']; ?>); background-size:cover;" 
+		<?php endif; ?>	
+	>
+	
+	
+	
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
-			<div class="row">
-				<div class="twelve columns">
-					<h3><?php the_title(); ?></h3>
-				</div>
-			</div><!--/row-->
 			<div class="row">
 			
 				<?php 
