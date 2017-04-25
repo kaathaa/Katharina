@@ -41,7 +41,7 @@
 	
 // GOGGLE UND ICONS	
 	function load_google_fonts() {
-		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Great+Vibes|Raleway" rel="stylesheet');
+		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet');
 		wp_enqueue_style( 'googleFonts');
 	}
 	 add_action('wp_print_styles', 'load_google_fonts');
@@ -68,6 +68,20 @@
 	
 // CUSTOM HEADER	
 	add_theme_support( 'custom-header', $args );
+	
+// CUSTOM LOGO
+	add_theme_support( 'custom-logo' );		
+		function ka_custom_logo_setup() {
+		$defaults = array(
+			'height'      => 50,
+			'width'       => 50,
+			'flex-height' => true,
+			'flex-width'  => true,
+		);
+		add_theme_support( 'custom-logo', $defaults );
+	}
+	add_action( 'after_setup_theme', 'ka_custom_logo_setup' );
+	
 	
 	
 // WIDGET
