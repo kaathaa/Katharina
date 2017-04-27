@@ -64,7 +64,7 @@
 	
 	
 // CUSTOM BACKGROUNDS	
-	add_theme_support( 'custom-background', $defaults );
+	//add_theme_support( 'custom-background', $defaults );
 	
 // CUSTOM HEADER	
 	add_theme_support( 'custom-header', $args );

@@ -18,6 +18,19 @@
 				background-size: cover;
 			}
 		</style>
+	<?php } else { ?>
+		<style>
+			header {
+				height: auto;
+			}
+			.header-content {
+				display:none;
+			}
+			footer {
+				position: absolute;
+				width: 100%;
+			}
+		</style>
 	<?php } ?>
 
 
@@ -27,7 +40,12 @@
 <body <?php body_class();?>>
 
 	<header id="home">
-	<?php get_template_part('template_parts/navi'); ?>
+	<?php if(is_front_page()) { 
+			get_template_part('template_parts/navi');
+		} else { 
+			get_template_part('template_parts/static_nav');
+		}
+	?>
 		<div class="container">  
 			<div class="row">
 				<div class="twelve columns header-content">
