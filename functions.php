@@ -39,9 +39,9 @@
 	
 
 	
-// GOGGLE UND ICONS	
+// FONTS UND ICONS	
 	function load_google_fonts() {
-		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet');
+		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Indie+Flower|Raleway" rel="stylesheet');
 		wp_enqueue_style( 'googleFonts');
 	}
 	 add_action('wp_print_styles', 'load_google_fonts');
@@ -64,7 +64,7 @@
 	
 	
 // CUSTOM BACKGROUNDS	
-	//add_theme_support( 'custom-background', $defaults );
+	add_theme_support( 'custom-background', $defaults );
 	
 // CUSTOM HEADER	
 	add_theme_support( 'custom-header', $args );
@@ -105,16 +105,40 @@
 
 	
 	
-// SHORTCODE
+// SHORTCODE GRID
 	function ka_shortcode( $atts, $content = null ) {
         extract( shortcode_atts(
             array(
                 'cols' => 'six',
             ), $atts )
         );		
-		return '<div class="' .$cols. ' columns">' .$content. '</div>';
+		return '<div class="' .$cols. ' columns">' .do_shortcode($content). '</div>';
 	}
 	add_shortcode( 'columns', 'ka_shortcode' );
+	
+	
+// SHORTCODE ICONS	
+	function icon_headline ($atts) {
+		$icon = shortcode_atts( array (
+				'name' => '',
+				'size' => '1',
+				'headline' => ''
+		), $atts );
+	
+	return '<div class="offset-by-two eight columns headline-box">
+				<div class="icon-box">
+					<i class="fa fa-'. $icon['name'] .' fa-'.$icon['size'].'x"></i>
+				</div>
+				<h2>'.$icon['headline'].'</h2>
+			</div>
+			</div><div class="row">';
+	
+	
+	
+	}
+	add_shortcode ('icon', 'icon_headline');
+	
+	
 	
 	
 
@@ -130,8 +154,10 @@
     add_action( 'wp_dashboard_setup', 'ka_add_dashboard_widget' );
 
     function wpv_dashboard_widget_content() {
-        echo '<p>Shortcode fürs Gridlayout:</p>
-		<p>[columns cols="three"]...[/columns]</p>';
+        echo '<p><strong>Shortcode fürs Gridlayout:</strong></br>
+		[columns cols="three"]...[/columns]</p>
+		<p><strong>Icon + Überschrift Shortcodes:</strong><br>[icon name=envelope size=2 headline=Contact]<br></p>		
+		';
     }
 	
 
