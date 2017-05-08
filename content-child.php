@@ -7,6 +7,7 @@
 				<div class="row">
 					<div class="twelve columns">
 						<h3><?php the_title(); ?></h3>
+
 					</div>
 						
 					<div class="twelve columns">

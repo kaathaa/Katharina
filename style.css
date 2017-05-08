@@ -10,6 +10,7 @@
 /* GLOBALS */
 body, html {
 	height: 100%;
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 section {
 	padding: 100px 0;
@@ -43,6 +44,23 @@ h1 {
 }
 h1 a {
 	color: rgb(251,246,164);
+}
+
+.animated-text {
+ overflow: hidden;
+ height:1.1em;
+ word-wrap: break-word;
+ white-space: nowrap;
+ animation: typing 4s steps(48) forwards;
+}
+@keyframes typing {
+  from { 
+    width: 0;
+  }
+
+  to { 
+    width: 48ch;
+  }
 }
 
 h2 {
@@ -214,7 +232,6 @@ footer nav {
 
 
 /* FORM */
-
 input, textarea {
 	background: rgb(251,246,164) !important;
 }

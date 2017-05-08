@@ -55,6 +55,14 @@
 		   jQuery("html, body").animate({scrollTop: 0}, 1000);
 		});
 	</script>
+	
+	<script>
+
+		jQuery("#kabout").click(function(){
+			jQuery(this).hide();
+		});
+	
+	</script>
 
 	
 	
