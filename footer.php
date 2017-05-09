@@ -56,13 +56,7 @@
 		});
 	</script>
 	
-	<script>
 
-		jQuery("#kabout").click(function(){
-			jQuery(this).hide();
-		});
-	
-	</script>
 
 	
 	

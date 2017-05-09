@@ -11,6 +11,7 @@
 body, html {
 	height: 100%;
 	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: rgb(64, 64, 64);
 }
 section {
 	padding: 100px 0;
@@ -25,44 +26,51 @@ section {
 	}		
 }
 
+
+
+
+h1 {
+	font-size: 1.2em;
+	line-height: 1;	
+	letter-spacing: 0;
+	margin-top: .8em;
+}
+.animated-text {
+	overflow: hidden;
+	height: 1.1em;
+	word-wrap: break-word;
+	white-space: nowrap;
+	animation: typing 4s steps(24) forwards;
+}
 @media(min-width:300px) {
 	h1 {
 		float: right;
 		clear: right;
-		font-size: 2.7em !important;
+		font-size: 2.3em;
 		text-align: right;
+		display: inline;
 	}	
 	.custom-logo {
 		float: right;
 	}
 }
-h1 {
-	font-size: 1.9em;
-	line-height: 1;	
-	letter-spacing: 0;
-	margin-top: .8em;
-}
-h1 a {
-	color: rgb(251,246,164);
-}
 
-.animated-text {
- overflow: hidden;
- height:1.1em;
- word-wrap: break-word;
- white-space: nowrap;
- animation: typing 4s steps(48) forwards;
-}
+
+
 @keyframes typing {
   from { 
     width: 0;
   }
 
   to { 
-    width: 48ch;
+    width: 24ch;
   }
 }
 
+
+h1 a {
+	color: rgb(251,246,164);
+}
 h2 {
     display: inline;
     vertical-align: middle;
@@ -70,6 +78,19 @@ h2 {
 	color: rgb(248,109,197);
 	font-family: 'Indie Flower', cursive;
 	padding-left: .2em;
+}
+h3 {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	vertical-align: middle;
+	border-bottom: 2px solid rgb(248,109,197);
+	padding-bottom: 5px;
+}
+.fa-code {
+	border: 2px solid rgb(248,109,197);
+	border-radius: 100%;
+	padding: 7px;
+	
 }
 .headline-box {
 	text-align: center;
@@ -110,11 +131,16 @@ a {
 	border: 2px solid rgb(248,109,197) !important;
 	transition: 0.5s;
 }
+.box {
+	background: rgba(248,240,84,0.4);
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
 
 
 /* HEADER */
 header {
-  text-align: center;
   height: 100%;
 }
 #static {
@@ -131,6 +157,7 @@ header nav {
 	position: fixed;
 	width: 100%;
 	z-index: 99;
+	text-align: center;
 }
 .slicknav_menu {
 	display:none;
@@ -239,6 +266,19 @@ input, textarea:focus {
 	border: 1px solid rgb(248,109,197) !important;
 }
 
+
+
+/*ANIMATIONS*/
+.hidden{
+     opacity:0;
+}
+.visible{
+     opacity:1;
+}
+.duration {
+    animation-delay: 1s;
+	animation-duration: 2s;
+}
 
 
 

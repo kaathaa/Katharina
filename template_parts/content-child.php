@@ -11,7 +11,7 @@
 			if( ! has_shortcode( $post->post_content, 'columns') && ! has_shortcode( $post->post_content, 'icon') ) { ?>
 				<div class="row">
 					<div class="twelve columns">
-						<?php the_content(); ?>
+						<?php the_content(); ?>						
 					</div>
 				</div>	<!--/row-->				
 			<?php 
@@ -19,6 +19,7 @@
 				<div class="row">
 					<?php the_content(); ?>	
 				</div><!--/row-->	
-			<?php }?>				
+			<?php }?>			
 		</div>
 	</section>
+

@@ -34,6 +34,12 @@
 	function ka_register_scripts() {
 		wp_register_script( 'slicknavjs', get_template_directory_uri() .'/js/jquery.slicknav.min.js' ,null, true );
 		wp_enqueue_script( 'slicknavjs' );
+		
+		wp_register_script('viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.js', null, true);
+		wp_enqueue_script( 'viewportchecker');
+		
+		wp_register_script('customjs', get_template_directory_uri() . '/js/custom.js', null, true );
+		wp_enqueue_script('customjs');
 	}
 	add_action( 'wp_enqueue_scripts', 'ka_register_scripts' );
 	
@@ -84,7 +90,7 @@
 	
 	
 	
-// WIDGET
+// WIDGETS
 	function ka_widgets_init() {
 		register_sidebar( array(
 			'name' => __( 'Footer Widget', 'katharina' ),
@@ -98,11 +104,13 @@
 	}
 	add_action( 'widgets_init', 'ka_widgets_init' );
 	
+
 	
 	
 //REMOVES TAGS
 	remove_filter( 'the_content', 'wpautop' );	
 
+	
 	
 	
 // SHORTCODE GRID
@@ -117,28 +125,53 @@
 	add_shortcode( 'columns', 'ka_shortcode' );
 	
 	
-// SHORTCODE ICONS	
+// SHORTCODE ICONS
 	function icon_headline ($atts) {
 		$icon = shortcode_atts( array (
 				'name' => '',
 				'size' => '1',
-				'headline' => ''
+				'headline' => '',
+				'animation' => ''
 		), $atts );
 	
-	return '<div class="offset-by-two eight columns headline-box">
-				<div class="icon-box">
+		return '<div class="offset-by-two eight columns headline-box">
+				<div class="icon-box dyn'.$icon['animation'].'">
 					<i class="fa fa-'. $icon['name'] .' fa-'.$icon['size'].'x"></i>
 				</div>
 				<h2>'.$icon['headline'].'</h2>
 			</div>
 			</div><div class="row">';
-	
-	
-	
 	}
 	add_shortcode ('icon', 'icon_headline');
 	
 	
+// SHORTCODE ANIMATION
+	function do_animation($atts){
+		$animate_class = shortcode_atts( array(
+							'action' => '',
+		), $atts );
+		
+		return ' class="dyn'.$animate_class['action'].'" ';		
+	}
+	add_shortcode('animate', 'do_animation');
+	
+
+// SHORTCODE BOXES
+	function ka_create_box( $atts, $content = null ) {
+        $box = shortcode_atts( array(
+                'title' => '',
+				'icon' => '',
+				'delay' => 1,
+            ), $atts );
+			
+		return '<div class="box dynBounceInUp" style="animation-delay: '.$box['delay'].'s;">
+					<h3>
+						<i class="fa fa-'.$box['icon'].'" aria-hidden="true"></i> '.$box['title'].'
+					</h3>' .do_shortcode($content). 
+			   '</div>';
+	}
+	add_shortcode( 'boxes', 'ka_create_box' );
+
 	
 	
 
@@ -154,9 +187,19 @@
     add_action( 'wp_dashboard_setup', 'ka_add_dashboard_widget' );
 
     function wpv_dashboard_widget_content() {
-        echo '<p><strong>Shortcode fürs Gridlayout:</strong></br>
+        echo '<p><strong>Shortcode fürs Gridlayout:</strong><br>
 		[columns cols="three"]...[/columns]</p>
-		<p><strong>Icon + Überschrift Shortcodes:</strong><br>[icon name=envelope size=2 headline=Contact]<br></p>		
+		<hr>
+		<p><strong>Icon + Überschrift Shortcodes:</strong><br>[icon name=envelope size=2 headline=Contact animation=Roll]<br></p>	
+		<hr>
+		<p><strong>Animationen:</strong><br>[animate action=Roll]
+		<ul>
+			<li>Roll</li>
+			<li>ZoomIn</li>
+			<li>BounceInUp</li>
+		</ul>
+		<hr>
+		<p><strong>Animierte Boxen:</strong><br>[boxes title=Responsive&nbspWebdesign icon=code delay=2]</p>
 		';
     }
 	
