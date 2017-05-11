@@ -43,17 +43,32 @@
 	
 	
 	<script>
-		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop()) {
+	jQuery(window).scroll(function() {
+		if (jQuery(this).scrollTop()) {
 				jQuery('#toTop').fadeIn();
 			} else {
 				jQuery('#toTop').fadeOut();
 			}
-		});
 
-		jQuery("#toTop").click(function () {
-		   jQuery("html, body").animate({scrollTop: 0}, 1000);
+		var menuHeight = jQuery( '.menu-hauptnavigation-container' ).height();
+		var acutalPage = '';
+		var actualWindowPosition = jQuery(window).scrollTop();
+		jQuery('section').each( function( i, val ) {
+			var sectionPart = jQuery( this );
+			var sectionID = sectionPart.attr( 'id' );
+
+			if( sectionPart.offset().top < ( actualWindowPosition + menuHeight ) ) {
+			  acutalPage = sectionID;
+			}
 		});
+		  
+		var pushUrl = '';
+		if( acutalPage != '' ) {
+			pushUrl = '#' + acutalPage;
+		}
+		  
+			window.history.pushState(acutalPage, 'Titel', pushUrl);
+		});		
 	</script>
 	
 
