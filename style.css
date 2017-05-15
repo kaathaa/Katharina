@@ -1,6 +1,7 @@
 /*
-	Theme Name: Theme
-	Description: Theme
+	Theme Name: Katharina
+	Description: One Page Theme 
+	Author: Katharina
 	Version: 1.0
 */
 
@@ -42,7 +43,7 @@ h1 {
 	white-space: nowrap;
 	animation: typing 4s steps(24) forwards;
 }
-@media(min-width:300px) {
+@media(min-width:410px) {
 	h1 {
 		float: right;
 		clear: right;
@@ -183,6 +184,13 @@ nav a{
 .slicknav_menu  {
 	display: none;
 }
+.slicknav_icon-bar
+ {
+	background-color: rgb(251,246,164) !important;
+}
+.slicknav_menu ul li a {
+	color: rgb(251,246,164);
+}
 
 @media screen and (max-width: 550px){
 	.js #menu {
@@ -276,7 +284,7 @@ input, textarea:focus {
      opacity:1;
 }
 .duration {
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 	animation-duration: 2s;
 }
 

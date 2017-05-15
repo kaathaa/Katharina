@@ -52,7 +52,7 @@
 					<?php if ( function_exists( 'the_custom_logo' ) ) {
 						the_custom_logo();
 					} ?>				
-					<h1 class="animated-text"><a href="<?php echo home_url('/') ?>"><?php bloginfo('name'); ?></a></h1>				
+					<h1 class="animated-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></h1>				
 				</div>
 			</div>
 		</div><!-- /.container -->
