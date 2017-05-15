@@ -157,6 +157,7 @@
 	
 
 // SHORTCODE BOXES
+/*
 	function ka_create_box( $atts, $content = null ) {
         $box = shortcode_atts( array(
                 'title' => '',
@@ -171,8 +172,21 @@
 			   '</div>';
 	}
 	add_shortcode( 'boxes', 'ka_create_box' );
-
-	
+*/
+	function ka_create_box( $atts, $content = null ) {
+        $box = shortcode_atts( array(
+                'title' => '',
+				'icon' => '',
+				'delay' => '',
+            ), $atts );
+			
+		return '<div class="box">
+					<h3>
+						<i class="fa fa-'.$box['icon'].'" aria-hidden="true"></i> '.$box['title'].'
+					</h3>' .do_shortcode($content). 
+			   '</div>';
+	}
+	add_shortcode( 'boxes', 'ka_create_box' );	
 	
 
 
