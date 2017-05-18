@@ -11,7 +11,6 @@
 						<?php 
 						$args= array(
 							'theme_location' => 'footernav',
-							'container' => 'nav',
 						);
 						wp_nav_menu($args);
 						?>
