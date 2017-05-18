@@ -71,6 +71,9 @@
 	
 // CUSTOM BACKGROUNDS	
 	add_theme_support( 'custom-background', $defaults );
+
+// POST THUMBNAILS	
+	add_theme_support('post-thumbnails');
 	
 // CUSTOM HEADER	
 	add_theme_support( 'custom-header', $args );
@@ -156,23 +159,6 @@
 	add_shortcode('animate', 'do_animation');
 	
 
-// SHORTCODE BOXES
-/*
-	function ka_create_box( $atts, $content = null ) {
-        $box = shortcode_atts( array(
-                'title' => '',
-				'icon' => '',
-				'delay' => 1,
-            ), $atts );
-			
-		return '<div class="box dynBounceInUp" style="animation-delay: '.$box['delay'].'s;">
-					<h3>
-						<i class="fa fa-'.$box['icon'].'" aria-hidden="true"></i> '.$box['title'].'
-					</h3>' .do_shortcode($content). 
-			   '</div>';
-	}
-	add_shortcode( 'boxes', 'ka_create_box' );
-*/
 	function ka_create_box( $atts, $content = null ) {
         $box = shortcode_atts( array(
                 'title' => '',
