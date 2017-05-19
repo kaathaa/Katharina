@@ -24,62 +24,6 @@
 	
 
 	
-	<script>
-		jQuery(function(){
-			jQuery('#menu').slicknav({
-				label: '',
-				closeOnClick:true
-			});
-		});
-	</script>
-	
-	<script>
-		jQuery(document).scroll(function(){
-			jQuery('#menu').addClass("animated slideInDown");
-		});
-	</script>
-	
-	
-	<script>
-		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop()) {
-				jQuery('#toTop').fadeIn();
-			} else {
-				jQuery('#toTop').fadeOut();
-			}
-		});
-		jQuery("#toTop").click(function () {
-		   jQuery("html, body").animate({scrollTop: 0}, 1000);
-		});
-	</script>
-	
-	
-	
-
-
- 	
- 	
-	<script>
-		jQuery(document).scroll(function(){
-			jQuery('#menu').addClass("animated slideInDown");
-		});
-	</script>
-	
-	
-	<script>
-		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop()) {
-				jQuery('#toTop').fadeIn();
-			} else {
-	jQuery('#toTop').fadeOut();
-			}
-		});
-
-		jQuery("#toTop").click(function () {
-		   jQuery("html, body").animate({scrollTop: 0}, 1000);
-		});
-	</script>
-	
 
 
 	

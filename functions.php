@@ -46,16 +46,14 @@
 
 	
 // FONTS UND ICONS	
-	function load_google_fonts() {
-		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Indie+Flower|Raleway" rel="stylesheet');
+	function load_fonts_and_icons() {
+		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet');
 		wp_enqueue_style( 'googleFonts');
+		
+		wp_register_style('icons', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+		wp_enqueue_style('icons');
 	}
-	 add_action('wp_print_styles', 'load_google_fonts');
-	 
-	wp_enqueue_style(
-		'font-awesome',
-		'//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
-	);
+	add_action('wp_print_styles', 'load_fonts_and_icons');
 
 
 	
@@ -70,7 +68,7 @@
 	
 	
 // CUSTOM BACKGROUNDS	
-	add_theme_support( 'custom-background', $defaults );
+	add_theme_support( 'custom-background' );
 
 // POST THUMBNAILS	
 	add_theme_support('post-thumbnails');
@@ -204,7 +202,13 @@
     }
 	
 
-	
-	
-	
+// MAINTENANCE MODE	
+/*
+	function wpr_maintenance_mode() {
+		 if ( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ) {
+		  wp_die('Diese Seite befindet sich im Aufbau');
+		 }
+		}
+		add_action('get_header', 'wpr_maintenance_mode');
+*/	
 	

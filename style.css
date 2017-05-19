@@ -9,6 +9,7 @@
 
 
 /* GLOBALS */
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 body, html {
 	height: 100%;
 	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -129,6 +130,11 @@ a {
 	border-radius: 4px;
 	margin-bottom: 10px;
 }
+@media(min-width:450px){
+	.box{
+		min-height: 330px;
+	}
+}
 
 
 /* HEADER */
@@ -222,7 +228,21 @@ nav a{
 #post-27 {
 	width: 95%;
 }
-
+.img-about {
+	max-width: 60%;
+	border-radius: 100%;
+	display: block;
+	margin: auto;
+}
+blockquote {
+	font-family: 'Indie Flower', cursive;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	text-align: center;
+}
+#motivation a {
+	color: rgb(219,10,143) !important;
+}
 
 
 /* FORM */
@@ -257,7 +277,7 @@ nav a{
 	padding-top: 20px;
 	width: 95%
 }
-.txt-call a {
+.phone a {
 	color: rgb(251,246,164) !important;
 }
 .phone > .icon-box {
@@ -334,5 +354,7 @@ footer nav {
 	padding: .5em;
 	border-radius: 4px;
 }
-
+.widget_text {
+	color: rgb(33,33,33);
+}
 
