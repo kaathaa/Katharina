@@ -1,5 +1,6 @@
 					<?php 
-					$args= array(						'theme_location' => 'mainnav',
+					$args= array(						
+					'theme_location' => 'mainnav',
 						'container' => 'nav',
 						'menu_id'      => 'menu',
 					);

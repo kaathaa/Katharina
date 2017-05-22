@@ -55,6 +55,9 @@ h1 {
 	.custom-logo {
 		float: right;
 	}
+	.animated-text {
+		float: right;
+	}
 }
 
 
@@ -73,14 +76,21 @@ h1 {
 h1 a {
 	color: rgb(251,246,164);
 }
+
 h2 {
     display: inline;
     vertical-align: middle;
-	font-size: 5em;
+	font-size: 3em;
 	color: rgb(219, 10, 143);
 	font-family: 'Indie Flower', cursive;
 	padding-left: .2em;
 }
+@media(min-width:410px) {
+	h2 {
+		font-size: 5em;
+	}
+}
+
 h3 {
 	font-size: 1.2em;
 	line-height: 1.2em;
@@ -146,16 +156,21 @@ header {
 }
 .header-content {
 	margin-top: 180px;
+	text-align: right;
 }
 
 
 
 /* NAVIGATION */
+
 header nav {
 	position: fixed;
 	width: 100%;
 	z-index: 99;
 	text-align: center;
+}
+.slicknav_menu .slicknav_icon-bar {
+	background: rgb(251,246,164);
 }
 .slicknav_menu {
 	display:none;
@@ -181,28 +196,31 @@ nav a{
 .slicknav_menu  {
 	display: none;
 }
-.slicknav_icon-bar
- {
-	background-color: rgb(251,246,164) !important;
-}
+
 .slicknav_menu ul li a {
 	color: rgb(251,246,164);
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 40em){
 	.js #menu {
 		display:none;
+				background: rgb(128,128,128);
 	}
-
+	.slideInDown {
+		display: none;
+	}
+.menu-katharina-container{
+	display: none !important;
+}
 	.js .slicknav_menu {
 		display:block;
 	}
 	.slicknav_menu {
-		position:static;
+		position: static; 
 	}
 	
 	.slicknav_menu {
-		display:block;
+	    display: block; 
 		position: fixed;
 		width: 100%;
 		top: 0;
