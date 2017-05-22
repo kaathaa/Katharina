@@ -26,29 +26,29 @@ jQuery(document).ready(function() {
 
 
 
-		jQuery(function(){
-			jQuery('#menu').slicknav({
-				label: '',
-				closeOnClick:true
-			});
+	jQuery(function(){
+		jQuery('#menu').slicknav({
+			label: '',
+			closeOnClick:true
 		});
+	});
 
 
-		
-		jQuery(document).scroll(function(){
-			jQuery('#menu, .slicknav_menu').addClass("animated slideInDown");
-		});
 	
-		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop()) {
-				jQuery('#toTop').fadeIn();
-			} else {
-				jQuery('#toTop').fadeOut();
-			}
-		});
-		jQuery("#toTop").click(function () {
-		   jQuery("html, body").animate({scrollTop: 0}, 1000);
-		});
+	jQuery(document).scroll(function(){
+		jQuery('#menu, .slicknav_menu').addClass("animated slideInDown");
+	});
+
+	jQuery(window).scroll(function() {
+		if (jQuery(this).scrollTop()) {
+			jQuery('#toTop').fadeIn();
+		} else {
+			jQuery('#toTop').fadeOut();
+		}
+	});
+	jQuery("#toTop").click(function () {
+	   jQuery("html, body").animate({scrollTop: 0}, 1000);
+	});
 
 
 });	
